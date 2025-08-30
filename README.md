@@ -1,6 +1,3 @@
-Here’s an updated **README.md** that reflects the `main.py` you shared (which now loads environment variables and automatically emails logs after stopping):
-
----
 
 # 🖥️ Python Keylogger (Educational Project)
 
@@ -110,7 +107,3 @@ pip install -r requirements.txt
 This project is intended **only for educational purposes**.
 Do **not** use this software on devices or accounts without **explicit permission**.
 The author is not responsible for any misuse.
-
----
-
-Would you like me to also **update the `requirements.txt` file** so it exactly matches this new setup (`pynput`, `pywin32`, `python-dotenv`)?
