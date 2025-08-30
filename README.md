@@ -1,12 +1,20 @@
-🖥️ Python Keylogger (Educational Project)
+Here’s an updated **README.md** that reflects the `main.py` you shared (which now loads environment variables and automatically emails logs after stopping):
 
-A simple modular keylogger in Python that records keystrokes and also logs the active application/window where the typing happens.
-This project is for learning purposes only — to understand event listeners, file handling, modular design, and OS-level APIs.
+---
 
-⚠️ Disclaimer: This tool is strictly for educational use on your own machine.
-Misuse of keyloggers (e.g., stealing credentials, spying without consent) is illegal under computer misuse and cybercrime laws.
+# 🖥️ Python Keylogger (Educational Project)
 
-📂 Project Structure
+A simple **modular keylogger in Python** that records keystrokes and also logs the **active application/window** where the typing happens.
+This project is for **learning purposes only** — to understand event listeners, file handling, modular design, and OS-level APIs.
+
+⚠️ **Disclaimer:** This tool is strictly for **educational use on your own machine**.
+Misuse of keyloggers (e.g., stealing credentials, spying without consent) is **illegal** under computer misuse and cybercrime laws.
+
+---
+
+## 📂 Project Structure
+
+```
 keylogger_project/
 │── main.py              # Entry point (starts the keylogger, emails logs after stop)
 │── requirements.txt      # Dependencies
@@ -23,81 +31,86 @@ keylogger_project/
     ├── file_handler.py   # Save keystrokes to file
     └── email_handler.py  # Send logs via email
 
+```
 
-⚡ Features
+---
 
-Captures all keystrokes using pynput
+## ⚡ Features
 
-Logs active window/app name whenever the user switches applications
+* Captures **all keystrokes** using `pynput`
+* Logs **active window/app name** whenever the user switches applications
+* Saves logs to a text file (`keylogs.txt`)
+* Modular structure for easy extension
+* **Automatic email sending** of logs after stopping (using `.env` credentials)
 
-Saves logs to a text file (keylogs.txt)
+---
 
-Modular structure for easy extension
+## 🚀 Usage
 
-Automatic email sending of logs after stopping (using .env credentials)
+1. Create a `.env` file in the project root with your email credentials:
 
-🚀 Usage
+   ```
+   SENDER_EMAIL=your_email@gmail.com
+   APP_PASSWORD=your_app_password
+   RECEIVER_EMAIL=receiver_email@gmail.com
+   ```
 
-Create a .env file in the project root with your email credentials:
+   > 💡 For Gmail, you need to use an **App Password**, not your actual account password.
 
-SENDER_EMAIL=your_email@gmail.com
-APP_PASSWORD=your_app_password
-RECEIVER_EMAIL=receiver_email@gmail.com
+2. Run the keylogger:
 
+   ```sh
+   python main.py
+   ```
 
-💡 For Gmail, you need to use an App Password, not your actual account password.
+3. * Keystrokes will be saved in `keylogs.txt`
+   * Whenever the active window changes, the log will show:
 
-Run the keylogger:
+   ```
+   === Google Chrome ===
+   2025-08-22 12:10:01 - h
+   2025-08-22 12:10:02 - e
+   2025-08-22 12:10:03 - l
+   2025-08-22 12:10:04 - l
+   2025-08-22 12:10:05 - o
+   ```
 
-python main.py
+4. Press **ESC** to stop the program.
+   After stopping, logs will be emailed automatically.
 
+---
 
-Keystrokes will be saved in keylogs.txt
+## 📦 Dependencies
 
-Whenever the active window changes, the log will show:
-
-=== Google Chrome ===
-2025-08-22 12:10:01 - h
-2025-08-22 12:10:02 - e
-2025-08-22 12:10:03 - l
-2025-08-22 12:10:04 - l
-2025-08-22 12:10:05 - o
-
-
-Press ESC to stop the program.
-After stopping, logs will be emailed automatically.
-
-📦 Dependencies
-
-pynput
- — capture keystrokes
-
-pywin32
- — get active window info (Windows only)
-
-python-dotenv
- — load .env variables
+* [pynput](https://pypi.org/project/pynput/) — capture keystrokes
+* [pywin32](https://pypi.org/project/pywin32/) — get active window info (Windows only)
+* [python-dotenv](https://pypi.org/project/python-dotenv/) — load `.env` variables
 
 Install all with:
 
+```sh
 pip install -r requirements.txt
+```
 
-📚 Learning Outcomes
+---
 
-Event listeners in Python (pynput)
+## 📚 Learning Outcomes
 
-File handling and logging
+* Event listeners in Python (`pynput`)
+* File handling and logging
+* Detecting active applications/windows
+* Modular project design
+* Using `.env` files for safe credential management
+* Sending emails with `smtplib`
 
-Detecting active applications/windows
+---
 
-Modular project design
+## ⚠️ Disclaimer
 
-Using .env files for safe credential management
-
-Sending emails with smtplib
-
-⚠️ Disclaimer
-
-This project is intended only for educational purposes.
-Do not use this software on devices or accounts without explicit permission.
+This project is intended **only for educational purposes**.
+Do **not** use this software on devices or accounts without **explicit permission**.
 The author is not responsible for any misuse.
+
+---
+
+Would you like me to also **update the `requirements.txt` file** so it exactly matches this new setup (`pynput`, `pywin32`, `python-dotenv`)?
